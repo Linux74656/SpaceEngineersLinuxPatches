@@ -1,4 +1,4 @@
-Prerequisites:
+# Prerequisites:
 
 NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther.
 
@@ -41,7 +41,7 @@ cd /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
 bspatch Sandbox.Game.dll Sandbox.Game.dll /home/USER/Desktop/Patches/Sandbox.Game.dll.patch
 bspatch VRage.Scripting.dll Vrage.Scripting.dll  /home/USER/Desktop/Patches/VRage.Scripting.dll.patch
 
-Special notes:
+# Special notes:
 
 1) Do not accept the anonymous data collection dialog when the game starts that will break the game very badly!
 If you have done it by accident you can go ino the config file located in your prefix location /drive_C/users/steamuser/Application Data/SpaceEngineers/SpaceEngineers.cfg and change the line under <Key>GDPRConsent</Key> that looks like <Value xsi:type="xsd:string">True</Value> to this <Value xsi:type="xsd:string">False</Value>
@@ -49,6 +49,6 @@ Unforunatly it seems the window will appear everytime you start the game so just
 
 That should work for now.
 
-Some notes: The game is a bit unstable. 
+# Some more notes: IE The game is still a bit unstable.
 1) It will probably freeze a few times during load, so forcibly quit and try loading again. You should be able to hit continue game, on the main screen, and it will load your last world. Even if you never got into the world to play.
 2) The game keeps running in the background even after closed, so you will have to manually kill the process everytime you close the game.
