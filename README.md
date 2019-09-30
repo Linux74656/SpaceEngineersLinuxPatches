@@ -10,7 +10,7 @@ First of all we need to ensure Space Engineers is setup properly:
 
 2) Create a new prefix with necessary dependencies (vcrun2015 xact)
 
-WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winetricks --force -q vcrun2015 xact
+> WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winetricks --force -q vcrun2015 xact
 
 3) Install Wine-Mono, by default wine-mono should install itself into a new prefix that does not contain dotnet. However in the name of uniformity and to remove a potential point of confusion we will install the same version manually.
 	
@@ -20,7 +20,7 @@ WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winet
   
     C) Now we need to install it
   
-WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" msiexec -i "/FILEIDRECTORY/wine-mono-4.9.3.msi"
+> WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" msiexec -i "/FILEIDRECTORY/wine-mono-4.9.3.msi"
 
 4) One last thing we need BSPATCH. For Ubuntu and Debian users, you can install it with:
 sudo apt-get install bsdiff
@@ -35,7 +35,8 @@ sudo apt-get install bsdiff
 2) Open your preferred terminal application(Konsole(KDE), Terminal(Gnome)… etc)
 
 3) Change directory into your Space Engineers Bin64 folder
-cd /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
+
+> cd /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
 
 4) Now apply the first patch: bspatch oringalfile newfile patchfile
 bspatch Sandbox.Game.dll Sandbox.Game.dll /home/USER/Desktop/Patches/Sandbox.Game.dll.patch
