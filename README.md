@@ -27,7 +27,7 @@ sudo apt-get install bsdiff
 
 5) You need a clean copy of the game files. Already modified copies of the patch files will not work (I found this out the hard way!). So make backups of the bin64 directory in the Space Engineers directory.
 
-# How to:
+# How to apply the patches:
 
 1) Download the patch files for the game. They should be part of this repository.
 	A)Extract this folder containing the files to someplace easy to find, like your desktop
