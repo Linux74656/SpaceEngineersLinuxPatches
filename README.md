@@ -1,6 +1,6 @@
 # Prerequisites:
 
-NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther.
+#### NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther.
 
 First of all we need to ensure Space Engineers is setup properly:
 	This will assume you already know how to use Winetricks and where your Space Engineers 	install/Prefix is located.
@@ -27,7 +27,7 @@ sudo apt-get install bsdiff
 
 5) You need a clean copy of the game files. Already modified copies of the patch files will not work (I found this out the hard way!). So make backups of the bin64 directory in the Space Engineers directory.
 
-How to:
+# How to:
 
 1) Download the patch files for the game. They should be part of this repository.
 	A)Extract this folder containing the files to someplace easy to find, like your desktop
