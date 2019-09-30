@@ -47,6 +47,7 @@ bspatch VRage.Scripting.dll Vrage.Scripting.dll  /home/USER/Desktop/Patches/VRag
 1) Do not accept the anonymous data collection dialog when the game starts that will break the game very badly!
 If you have done it by accident you can go ino the config file located in your prefix location /drive_C/users/steamuser/Application Data/SpaceEngineers/SpaceEngineers.cfg and change the line under <Key>GDPRConsent</Key> that looks like <Value xsi:type="xsd:string">True</Value> to this <Value xsi:type="xsd:string">False</Value>
 Unforunatly it seems the window will appear everytime you start the game so just hit escape or no, and it should be fine.
+2) In order to prevent the issue that freezes the game at startup untill you hit escape, or click the mouse. You may find it advantageous to remove or rename the file here : /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/Content/Videos/KSH.wmv
 
 That should work for now.
 
