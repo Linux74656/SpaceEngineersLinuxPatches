@@ -39,7 +39,7 @@ cd /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
 
 4) Now apply the first patch: bspatch oringalfile newfile patchfile
 bspatch Sandbox.Game.dll Sandbox.Game.dll /home/USER/Desktop/Patches/Sandbox.Game.dll.patch
-bspatch VRage.Scripting.dll Vrage.Scripting.dll  /home/USER//Desktop/Patches/VRage.Scripting.dll.patch
+bspatch VRage.Scripting.dll Vrage.Scripting.dll  /home/USER/Desktop/Patches/VRage.Scripting.dll.patch
 
 That should work for now.
 
