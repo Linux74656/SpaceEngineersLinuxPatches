@@ -1,6 +1,6 @@
 Prerequisites:
 
-NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102)
+NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther.
 
 First of all we need to ensure Space Engineers is setup properly:
 	This will assume you already know how to use Winetricks and where your Space Engineers 	install/Prefix is located.
