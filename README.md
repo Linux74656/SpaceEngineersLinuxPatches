@@ -50,5 +50,5 @@ Unforunatly it seems the window will appear everytime you start the game so just
 That should work for now.
 
 Some notes: The game is a bit unstable. 
-1) It will probably freeze a few times during load, so forcibly quit and try loading again. You should be able to hit continue, and it will load your last world. Even if you never got into the world to play.
+1) It will probably freeze a few times during load, so forcibly quit and try loading again. You should be able to hit continue game, on the main screen, and it will load your last world. Even if you never got into the world to play.
 2) The game keeps running in the background even after closed, so you will have to manually kill the process everytime you close the game.
