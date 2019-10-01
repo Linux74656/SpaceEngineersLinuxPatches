@@ -2,7 +2,9 @@
 
 ## DUE TO ME BEING THEBIGDUMB<sup>tm</sup> you will need to refollw this guide and use the newly provided patches in this repo. This should fix most of the load hanging issues.
 
-#### NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther.
+#### NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther. 
+#### NOTE2: You must apply the patches the the oringal game dlls. so copy the backups you made into the Bin64 folder, or verify your game integrity in steam.
+#### NOTE3: To apply the new patches you should be able to skip deleting and recreating the wine Prefix. IE Skip to How to apply the patches.
 
 First of all we need to ensure Space Engineers is setup properly:
 	This will assume you already know how to use Winetricks and where your Space Engineers 	install/Prefix is located.
