@@ -4,7 +4,7 @@
 
 #### NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther. 
 #### NOTE2: You must apply the patches the the oringal game dlls. so copy the backups you made into the Bin64 folder, or verify your game integrity in steam.
-#### NOTE3: To apply the new patches you should be able to skip deleting and recreating the wine Prefix. IE Skip to How to apply the patches.
+#### NOTE3: To apply the new patches, if you already applied the old ones and had issues, you should be able to skip deleting and recreating the wine Prefix. IE Skip to How to apply the patches.
 
 First of all we need to ensure Space Engineers is setup properly:
 	This will assume you already know how to use Winetricks and where your Space Engineers 	install/Prefix is located.
