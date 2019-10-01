@@ -1,4 +1,3 @@
- 
 #File: autopatcher.py
 import os
 import requests
