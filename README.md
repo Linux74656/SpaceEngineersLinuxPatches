@@ -8,9 +8,9 @@ First of all we need to ensure Space Engineers is setup properly:
 0) *MAKE SURE YOU BACKUP ANY WORLDS/BLUEPRINTS YOU WANT!*
 1) Delete your old prefix. 
 
-2) Create a new prefix with necessary dependencies (vcrun2015 xact)
+2) Create a new prefix with necessary dependencies ( vcrun2005 vcrun2015 xact)
 
-> WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winetricks --force -q vcrun2015 xact
+> WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winetricks --force -q vcrun2005 vcrun2015 xact
 
 3) Install Wine-Mono, by default wine-mono should install itself into a new prefix that does not contain dotnet. However in the name of uniformity and to remove a potential point of confusion we will install the same version manually.
 	
@@ -18,9 +18,11 @@ First of all we need to ensure Space Engineers is setup properly:
   
     B) Get version: wine-mono-4.9.3.msi
   
-    C) Now we need to install it
+    C) Now we need to install it and then set the windows version to windows 7
   
 > WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" msiexec -i "/FILEIDRECTORY/wine-mono-4.9.3.msi"
+
+> WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winetricks win7
 
 4) One last thing we need BSPATCH. For Ubuntu and Debian users, you can install it with:
 sudo apt-get install bsdiff
