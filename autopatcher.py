@@ -12,7 +12,7 @@ SandboxPATCH   = 'Sandbox.Game.dll.patch'
 VRagePATCH     = 'VRage.Scripting.dll.patch'
 
 #TEMPRARY CHECKSUMS Until I can implement Onyx47 soutions
-#NOTE VERSION 1.192.102 does not have a checksome so it will do nothing for now.
+#NOTE VERSION 1.192.102 does not have a checksum so it will do nothing for now.
 CheckSumListSandBox    = ['00000000000000000000000000000000','b6d168be7e38640817f8d7f1de523346']
 CheckSumListScripts    = ['00000000000000000000000000000000','cf4b860b7917fa53d8c95e0c6a377451']
 CheckSumListSandBoxMOD = ['00000000000000000000000000000000','5cb888e13df4408806bbb03586ca68d2']
