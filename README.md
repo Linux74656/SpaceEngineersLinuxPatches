@@ -18,11 +18,11 @@ First of all we need to ensure Space Engineers is setup properly:
   
     B) Get version: wine-mono-4.9.3.msi
   
-    C) Now we need to install it and then set the windows version to windows 7
+    C) Now we need to install it and then set the windows version to windows xp
   
 > WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" msiexec -i "/FILEIDRECTORY/wine-mono-4.9.3.msi"
 
-> WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winetricks win7
+> WINEPREFIX="/home/USER/.local/share/Steam/steamapps/compatdata/244850/pfx" winetricks winxp
 
 4) One last thing we need BSPATCH. For Ubuntu and Debian users, you can install it with:
 sudo apt-get install bsdiff
