@@ -1,0 +1,10 @@
+{
+    "1.192.102": {
+        "Sandbox.Game.dll": "",
+        "VRage.Scripting.dll": ""
+    },
+    "1.192.103": {
+        "Sandbox.Game.dll": "5cb888e13df4408806bbb03586ca68d2",
+        "VRage.Scripting.dll": "430167f8300490a3b6492537687403c5"
+    }
+}
