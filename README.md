@@ -45,7 +45,7 @@ sudo apt-get install bsdiff
 
 4) Now apply the first patch: bspatch oringalfile newfile patchfile
 bspatch Sandbox.Game.dll Sandbox.Game.dll /home/USER/Desktop/Patches/Sandbox.Game.dll.patch
-bspatch VRage.Scripting.dll Vrage.Scripting.dll  /home/USER/Desktop/Patches/VRage.Scripting.dll.patch
+bspatch VRage.Scripting.dll VRage.Scripting.dll  /home/USER/Desktop/Patches/VRage.Scripting.dll.patch
 
 # Special notes:
 
