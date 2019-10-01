@@ -12,8 +12,8 @@ VRageDLLName   = 'VRage.Scripting.dll'
 SandboxPATCH   = 'Sandbox.Game.dll.patch'
 VRagePATCH     = 'VRage.Scripting.dll.patch'
 
-#TEMPRARY CHECKSUMS UNTIL OnyxSoution Can be implemented
-#NOTE VERSION 1.192.102 does not have a checksome so it will do nothing
+#TEMPRARY CHECKSUMS Until I can implement Onyx47 soutions
+#NOTE VERSION 1.192.102 does not have a checksome so it will do nothing for now.
 CheckSumListSandBox    = ['00000000000000000000000000000000','b6d168be7e38640817f8d7f1de523346']
 CheckSumListScripts    = ['00000000000000000000000000000000','cf4b860b7917fa53d8c95e0c6a377451']
 CheckSumListSandBoxMOD = ['00000000000000000000000000000000','5cb888e13df4408806bbb03586ca68d2']
@@ -24,6 +24,7 @@ VersionList  =  ['1.192.102','1.192.103']
 
 #ADD CHECKS TO ENSURE USER HAS bsdiff installed if not remind them to do it!
 
+#Find the install location of the game
 InstallLocation = input("Please insert your install location for Space Engineers. Should look somthing like this /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/ \n")
 
 BinLocation =InstallLocation+'/Bin64/'
@@ -80,4 +81,4 @@ if FOUNDPATCH==False:
                 os.system('rm '+SandboxDLLName+'.patch')
                 os.system('rm '+VRageDLLName+'.patch')
                 break
-print("Program End")
+print("Program End!")
