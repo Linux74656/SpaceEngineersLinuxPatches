@@ -6,6 +6,9 @@ First of all we need to ensure Space Engineers is setup properly:
 	This will assume you already know how to use Winetricks and where your Space Engineers 	install/Prefix is located.
 
 0) *MAKE SURE YOU BACKUP ANY WORLDS/BLUEPRINTS YOU WANT!*
+
+0.5. Verify the integrity of your game files by right cliking the game in steam, click properties, click the LOCAL FILES tab, then click VERIFY INTEGRITY OF GAME FILES...
+
 1) Delete your old prefix. 
 
 2) Create a new prefix with necessary dependencies ( vcrun2005 vcrun2015 xact)
