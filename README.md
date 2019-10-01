@@ -1,5 +1,7 @@
 # Prerequisites:
 
+## DUE TO ME BEING THEBIGDUMB<sup>tm</sup> you will need to refollw this guide and use the newly provided patches in this repo. This should fix most of the load hanging issues.
+
 #### NOTE: Currently this only works for the latest mainline branch of Space Engineers. (Version 1.192.102) This will NOT work for the MODSDK build eitther.
 
 First of all we need to ensure Space Engineers is setup properly:
@@ -55,5 +57,6 @@ Unforunatly it seems the window will appear everytime you start the game so just
 That should work for now.
 
 # Some more notes: IE The game is still a bit unstable.
-1) It will probably freeze a few times during load, so forcibly quit and try loading again. You should be able to hit continue game, on the main screen, and it will load your last world. Even if you never got into the world to play.
+0) Multiplayer with other nonpatched games(this includes windows servers) is not possilbe at this time. If you try it it will most likley crash the game. However patched linux clients connecting to patched linux servers seems to work without issue.
+1) It may freeze a few times during load, so forcibly quit and try loading again. You should be able to hit continue game, on the main screen, and it will load your last world. Even if you never got into the world to play.
 2) The game keeps running in the background even after closed, so you will have to manually kill the process everytime you close the game.
