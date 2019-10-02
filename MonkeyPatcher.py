@@ -26,11 +26,13 @@ PATCH_TO = re.search('(?<="buildid"(\t){2}").*(?=")', MANIFEST_INFO).group()
 PATCH_DIR = fJoin(SE_INSTALL, "Bin64")
 
 # Load Patch information from a json file
-if isFile("patch.json"):
+if isFile("patcsh.json"):
     with open('patch.json') as file:
         PATCH_INFO = json.load(file)
 else:  # Otherwise from the web
-    PATCH_INFO = requests.get(GH_PATCH_URL).json()
+    rq = requests.get(GH_PATCH_URL)
+    rq.raise_for_status()
+    PATCH_INFO = rq.json()
 
 
 # TODO: Grab these files from the interwebs. Now might be a good time to make functions a thing
