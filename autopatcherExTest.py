@@ -47,26 +47,23 @@ def DownloadPatch(buildVersion):
     with open("checksum.json", 'wb') as fil:
         fil.write(req.content)
         print("checksum.json Retrieved")
-        fil.close()
-        jsonFile = json.loads(open("checksum.json").read())
-        SBChecksum = jsonFile[buildVersion] [SandboxDLLName]
-        VRChecksum = jsonFile[buildVersion] [VRageDLLName]
-
-        SANDBOXVERSION = os.popen('md5sum '+BinLocation+'Sandbox.Game.dll').read()
-        VRAGEVERSION   = os.popen('md5sum '+BinLocation+'VRage.Scripting.dll').read()
-        SANDBOXVERSION = (SANDBOXVERSION[:32])
-        VRAGEVERSION   = (VRAGEVERSION[:32])
-        if SBChecksum != SANDBOXVERSION:
-            print("Checksums do not match, verify your game integrity and try again.")
-            sys.exit()
-        if VRChecksum != VRAGEVERSION:
-            print("Checksums do not match, verify your game integrity and try again.")
-            sys.exit()
+    jsonFile = json.loads(open("checksum.json").read())
+    SBChecksum = jsonFile[buildVersion] [SandboxDLLName]
+    VRChecksum = jsonFile[buildVersion] [VRageDLLName]
+    SANDBOXVERSION = os.popen('md5sum '+BinLocation+'Sandbox.Game.dll').read()
+    VRAGEVERSION   = os.popen('md5sum '+BinLocation+'VRage.Scripting.dll').read()
+    SANDBOXVERSION = (SANDBOXVERSION[:32])
+    VRAGEVERSION   = (VRAGEVERSION[:32])
+    if SBChecksum != SANDBOXVERSION:
+        print("Checksums do not match, verify your game integrity and try again.")
+        sys.exit()
+    if VRChecksum != VRAGEVERSION:
+        print("Checksums do not match, verify your game integrity and try again.")
+        sys.exit()
     req = requests.get(RepositoryURL+buildVersion+FILEEXTENSTION)
     with open(buildVersion+FILEEXTENSTION, 'wb') as fil:
         fil.write(req.content)
         print("Patches Retrieved")
-        fil.close()
 
 def ApplyPatch(FILENAME):
     # Extract patches
