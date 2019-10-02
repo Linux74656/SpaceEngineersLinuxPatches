@@ -1,83 +1,111 @@
-#File: autopatcher.py
+# File: autopatcher.py
 import os
 import requests
 import tarfile
+import sys
+import json
+import shutil
 
-#REPO LOCATION
-RepositoryURL = "https://raw.github.com/Linux74656/SpaceEngineersLinuxPatches/master/"
-FILEEXTENSTION = '.tar.gz'
-SandboxDLLName = 'Sandbox.Game.dll'
-VRageDLLName   = 'VRage.Scripting.dll'
-SandboxPATCH   = 'Sandbox.Game.dll.patch'
-VRagePATCH     = 'VRage.Scripting.dll.patch'
+# Unchanged and resued variables to ensure uniformity
+RepositoryURL  = "https://raw.github.com/Linux74656/SpaceEngineersLinuxPatches/master/"
+PatchFolderURL = "PatchFiles/"
+ChecksumFile   = "checksum.json"
+FILEEXTENSTION = ".tar.gz"
+SandboxDLLName = "Sandbox.Game.dll"
+VRageDLLName   = "VRage.Scripting.dll"
+SandboxPATCH   = "Sandbox.Game.dll.patch"
+VRagePATCH     = "VRage.Scripting.dll.patch"
 
-#TEMPRARY CHECKSUMS Until I can implement Onyx47 soutions
-#NOTE VERSION 1.192.102 does not have a checksum so it will do nothing for now.
-CheckSumListSandBox    = ['00000000000000000000000000000000','b6d168be7e38640817f8d7f1de523346']
-CheckSumListScripts    = ['00000000000000000000000000000000','cf4b860b7917fa53d8c95e0c6a377451']
-CheckSumListSandBoxMOD = ['00000000000000000000000000000000','5cb888e13df4408806bbb03586ca68d2']
-CheckSumListScriptsMOD = ['00000000000000000000000000000000','430167f8300490a3b6492537687403c5']
+def CheckPrereqs():
+    # ADD CHECKS TO ENSURE USER HAS bsdiff installed if not remind them to do it!
+    if shutil.which("bsdiff") is not None:
+        print("bsdiff is installed!")
+    else:
+        print("bsdiff is not installed. Please install it and rerun this script!")
+        sys.exit()
 
-#USER FRIENDLY VERSION LIST
-VersionList  =  ['1.192.102','1.192.103']
+    # Add other checks if necissary
 
-#ADD CHECKS TO ENSURE USER HAS bsdiff installed if not remind them to do it!
+# HAVE Should return the build number from the acf file, quick and dirty
+def GetBuildIDNumber(inloc):
+    with open(inloc+"appmanifest_244850.acf") as fil:
+        for line in fil:
+            if line.find("buildid") == -1:
+                pass
+            else:
+                TEMP = line
+                TEMP = TEMP.replace("\"buildid\"","")
+                TEMP = TEMP.replace("\"","")
+                TEMP = TEMP.replace("\"","")
+                TEMP = TEMP.rstrip()
+                TEMP = TEMP.lstrip()
+                return TEMP
 
-#Find the install location of the game
-InstallLocation = input("Please insert your install location for Space Engineers. Should look somthing like this /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/ \n")
+def CheckForPatches(buildVersion):
+    # If none tell user and close
+    req = requests.get(RepositoryURL+buildVersion+FILEEXTENSTION)
+    if req.status_code == 404:
+        print("No patches found for your game version.")
+        sys.exit()
+    else:
+        return
 
-BinLocation =InstallLocation+'/Bin64/'
+def DownloadPatch(buildVersion):
+    # Get json FILE
+    req = requests.get(RepositoryURL+ChecksumFile)
+    with open("checksum.json", 'wb') as fil:
+        fil.write(req.content)
+        print("checksum.json Retrieved")
+    jsonFile = json.loads(open("checksum.json").read())
+    SBChecksum = jsonFile[buildVersion] [SandboxDLLName]
+    VRChecksum = jsonFile[buildVersion] [VRageDLLName]
+    SANDBOXVERSION = os.popen('md5sum '+BinLocation+'Sandbox.Game.dll').read()
+    VRAGEVERSION   = os.popen('md5sum '+BinLocation+'VRage.Scripting.dll').read()
+    SANDBOXVERSION = (SANDBOXVERSION[:32])
+    VRAGEVERSION   = (VRAGEVERSION[:32])
+    if SBChecksum != SANDBOXVERSION:
+        print("Checksums do not match, verify your game integrity and try again.")
+        os.system('rm '+"checksum.json")
+        sys.exit()
+    if VRChecksum != VRAGEVERSION:
+        print("Checksums do not match, verify your game integrity and try again.")
+        os.system('rm '+"checksum.json")
+        sys.exit()
+    req = requests.get(RepositoryURL+PatchFolderURL+buildVersion+FILEEXTENSTION)
+    with open(buildVersion+FILEEXTENSTION, 'wb') as fil:
+        fil.write(req.content)
+        print("Patches Retrieved")
 
-#Get Current MD5Checksums
-SANDBOXVERSION = os.popen('md5sum '+BinLocation+'Sandbox.Game.dll').read()
-VRAGEVERSION   = os.popen('md5sum '+BinLocation+'VRage.Scripting.dll').read()
+def ApplyPatch(FILENAME):
+    # Extract patches
+    EXTRACT = tarfile.open(FILENAME)
+    EXTRACT.extractall()
+    EXTRACT.close()
+    # Apply patches
+    os.system('bspatch '+BinLocation+SandboxDLLName+' '+BinLocation+SandboxDLLName+' '+SandboxPATCH)
+    os.system('bspatch '+BinLocation+VRageDLLName+' '+BinLocation+VRageDLLName+' '+VRagePATCH)
+    # REMOVE ALL UNSUSED FILES
+    os.system('rm '+FILENAME)
+    os.system('rm '+"checksum.json")
+    os.system('rm '+SandboxDLLName+'.patch')
+    os.system('rm '+VRageDLLName+'.patch')
+#-------------------------------------------------------------------------------
 
-#REMOVE EXTRA DIRECTORY INFO FROM ENDS OF STRINGS
-SANDBOXVERSION = (SANDBOXVERSION[:32])
-VRAGEVERSION   = (VRAGEVERSION[:32])
+# Find the install location of the game
+# Assume default if not then ask:
+CheckPrereqs()
+SteamappsDir = os.path.join(os.environ['HOME'], '.steam/steam/steamapps')
+if os.path.isfile(os.path.join(SteamappsDir, 'appmanifest_244850.acf')):
+    InstallLocation = os.path.join(os.environ['HOME'], '.steam/steam/steamapps/')
+    print("Found Install Location: "+InstallLocation)
+else:
+    InstallLocation = input("Cannot locate install directory. Please input the "
+    +"steamapps folder location where Space Engineers is installed.\n")
+BinLocation = InstallLocation+'common/SpaceEngineers/Bin64/'
+# Grab the buildID
+buildID=GetBuildIDNumber(InstallLocation);
 
-#SHOW CHECKSUMS
-print(SANDBOXVERSION)
-print(VRAGEVERSION)
-
-#COMPARE CHECKSUMS
-
-#CHECK IF ALREADY PATCHED
-FOUNDPATCH= False;
-for num, POINTLESSAGAIN in enumerate(VersionList):
-    if SANDBOXVERSION == CheckSumListSandBoxMOD[num]:
-        if VRAGEVERSION == CheckSumListScriptsMOD[num]:
-            print('VERSION FOUND: '+VersionList[num])
-            print('Your game already appeares to be patched.')
-            FOUNDPATCH =True;
-            break
-#CHECK TO SEE IF PATCH VERSION AVALIBLE
-if FOUNDPATCH==False:
-    for num, POINTLESS in enumerate(VersionList):
-        if SANDBOXVERSION == CheckSumListSandBox[num] :
-            if VRAGEVERSION == CheckSumListScripts[num] :
-                print('VERSION FOUND: '+VersionList[num])
-                #LETS GET SOME PATCHES!
-                #CONCAT FILE NAME
-                FILENAME='V'+VersionList[num]+'Patches'+FILEEXTENSTION
-                #BUILD URL
-                URL= RepositoryURL+FILENAME;
-                print(URL)
-                req =requests.get(URL)
-                with open(FILENAME, 'wb') as fil:
-                    fil.write(req.content)
-                    fil.close()
-                #extract patches
-                EXTRACT = tarfile.open(FILENAME)
-                EXTRACT.extractall()
-                EXTRACT.close()
-                
-                #apply patches
-                os.system('bspatch '+BinLocation+SandboxDLLName+' '+BinLocation+SandboxDLLName+' '+SandboxPATCH)
-                os.system('bspatch '+BinLocation+VRageDLLName+' '+BinLocation+VRageDLLName+' '+VRagePATCH)
-                #REMOVE ALL UNSUSED FILES
-                os.system('rm '+FILENAME)
-                os.system('rm '+SandboxDLLName+'.patch')
-                os.system('rm '+VRageDLLName+'.patch')
-                break
-print("Program End!")
+CheckForPatches(buildID)
+DownloadPatch(buildID)
+ApplyPatch(buildID+FILEEXTENSTION)
+print("Program Complete!")
