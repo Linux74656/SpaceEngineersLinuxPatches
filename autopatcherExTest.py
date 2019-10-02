@@ -4,6 +4,7 @@ import requests
 import tarfile
 import sys
 import json
+import shutil
 
 # Unchanged and resued variables to ensure uniformity
 RepositoryURL  = "https://raw.github.com/Linux74656/SpaceEngineersLinuxPatches/master/"
@@ -14,10 +15,17 @@ VRageDLLName   = "VRage.Scripting.dll"
 SandboxPATCH   = "Sandbox.Game.dll.patch"
 VRagePATCH     = "VRage.Scripting.dll.patch"
 
-#def CheckPrereqs():
+def CheckPrereqs():
     # ADD CHECKS TO ENSURE USER HAS bsdiff installed if not remind them to do it!
+    if shutil.which("bsdiff") is not None:
+        print("bsdiff is installed!")
+    else:
+        print("bsdiff is not installed. Please install it and rerun this script!")
+        sys.exit()
 
-# HAVE SOME FUNCITONS!
+    # Add other checks if necissary
+
+# HAVE Should return the build number from the acf file, quick and dirty
 def GetBuildIDNumber(inloc):
     with open(inloc+"appmanifest_244850.acf") as fil:
         for line in fil:
@@ -81,8 +89,10 @@ def ApplyPatch(FILENAME):
     os.system('rm '+SandboxDLLName+'.patch')
     os.system('rm '+VRageDLLName+'.patch')
 #-------------------------------------------------------------------------------
+
 # Find the install location of the game
 # Assume default if not then ask:
+CheckPrereqs()
 SteamappsDir = os.path.join(os.environ['HOME'], '.steam/steam/steamapps')
 if os.path.isfile(os.path.join(SteamappsDir, 'appmanifest_244850.acf')):
     InstallLocation = os.path.join(os.environ['HOME'], '.steam/steam/steamapps/')
