@@ -3,12 +3,15 @@ import re
 import json
 import hashlib
 import tarfile
+import requests
 
 
 # Is this bad form? I'm too annoyed at the length of some of these to care
 isFile = os.path.isfile
 fJoin = os.path.join
 parent = os.path.pardir
+
+GH_PATCH_URL = "https://raw.githubusercontent.com/Linux74656/SpaceEngineersLinuxPatches/master/checksum.json"
 
 # Check to see if Space Engineers Exists, if so set the install dir.
 if isFile(fJoin(os.environ['HOME'], ".local/share/Steam/steamapps/appmanifest_244850.acf")):
@@ -17,21 +20,25 @@ if isFile(fJoin(os.environ['HOME'], ".local/share/Steam/steamapps/appmanifest_24
 else:
     SE_INSTALL = input("Space Engineers not found, enter it's location:\n")
     MANIFEST = fJoin(parent(parent(SE_INSTALL)), "appmanifest_244850.acf")
+with open(MANIFEST) as file:  # Grab the version to figure out naming
+    MANIFEST_INFO = file.read()
+PATCH_TO = re.search('(?<="buildid"(\t){2}").*(?=")', MANIFEST_INFO).group()
 PATCH_DIR = fJoin(SE_INSTALL, "Bin64")
 
 # Load Patch information from a json file
-with open('patch.json') as file:
-    PATCH_INFO = json.load(file)
-with open(MANIFEST) as file: # Grab the version to figure out naming
-    MANIFEST_INFO = file.read()
+if isFile("patch.json"):
+    with open('patch.json') as file:
+        PATCH_INFO = json.load(file)
+else:  # Otherwise from the web
+    PATCH_INFO = requests.get(GH_PATCH_URL).json()
 
-PATCH_TO = re.search('(?<="buildid"(\t){2}").*(?=")', MANIFEST_INFO).group()
 
 # TODO: Grab these files from the interwebs. Now might be a good time to make functions a thing
 with tarfile.open(PATCH_TO + ".tar.gz") as tar:
     tar.extractall()
 
 # Install the patches based on PATCH_TO
+
 for files in PATCH_INFO[PATCH_TO]:
     # Grab the current md5 of each file
     md5_a = hashlib.md5()
@@ -46,5 +53,5 @@ for files in PATCH_INFO[PATCH_TO]:
     else:
         # TODO: Check if the current file is "original" or it needs to be re-downloaded from steam
         print("Updating " + files + "...")
-        os.system('bspatch '+ str(filepath) +' '+ str(filepath) +' '+ files + ".patch")
+        os.system('bspatch ' + str(filepath) + ' ' + str(filepath) + ' ' + files + ".patch")
     os.remove(files + ".patch")
