@@ -8,6 +8,7 @@ import shutil
 
 # Unchanged and resued variables to ensure uniformity
 RepositoryURL  = "https://raw.github.com/Linux74656/SpaceEngineersLinuxPatches/master/"
+PatchFolderURL = "PatchFiles/"
 ChecksumFile   = "checksum.json"
 FILEEXTENSTION = ".tar.gz"
 SandboxDLLName = "Sandbox.Game.dll"
@@ -70,7 +71,7 @@ def DownloadPatch(buildVersion):
         print("Checksums do not match, verify your game integrity and try again.")
         os.system('rm '+"checksum.json")
         sys.exit()
-    req = requests.get(RepositoryURL+buildVersion+FILEEXTENSTION)
+    req = requests.get(RepositoryURL+PatchFolderURL+buildVersion+FILEEXTENSTION)
     with open(buildVersion+FILEEXTENSTION, 'wb') as fil:
         fil.write(req.content)
         print("Patches Retrieved")
