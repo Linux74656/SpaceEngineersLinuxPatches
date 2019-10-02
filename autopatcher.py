@@ -42,7 +42,7 @@ def GetBuildIDNumber(inloc):
 
 def CheckForPatches(buildVersion):
     # If none tell user and close
-    req = requests.get(RepositoryURL+buildVersion+FILEEXTENSTION)
+    req = requests.get(RepositoryURL+PatchFolderURL+buildVersion+FILEEXTENSTION)
     if req.status_code == 404:
         print("No patches found for your game version.")
         sys.exit()
