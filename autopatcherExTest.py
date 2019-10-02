@@ -56,9 +56,11 @@ def DownloadPatch(buildVersion):
     VRAGEVERSION   = (VRAGEVERSION[:32])
     if SBChecksum != SANDBOXVERSION:
         print("Checksums do not match, verify your game integrity and try again.")
+        os.system('rm '+"checksum.json")
         sys.exit()
     if VRChecksum != VRAGEVERSION:
         print("Checksums do not match, verify your game integrity and try again.")
+        os.system('rm '+"checksum.json")
         sys.exit()
     req = requests.get(RepositoryURL+buildVersion+FILEEXTENSTION)
     with open(buildVersion+FILEEXTENSTION, 'wb') as fil:
