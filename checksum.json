@@ -1,8 +1,6 @@
 {
-    "Versions": {
-        "4246126": {
-            "Sandbox.Game.dll" : "b6d168be7e38640817f8d7f1de523346",
-            "VRage.Scripting.dll" : "cf4b860b7917fa53d8c95e0c6a377451"
-        }
+    "4246126": {
+        "Sandbox.Game.dll" : "b6d168be7e38640817f8d7f1de523346",
+        "VRage.Scripting.dll" : "cf4b860b7917fa53d8c95e0c6a377451"
     }
 }
