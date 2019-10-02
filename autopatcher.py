@@ -36,9 +36,8 @@ def GetBuildIDNumber(inloc):
                 TEMP = line
                 TEMP = TEMP.replace("\"buildid\"","")
                 TEMP = TEMP.replace("\"","")
-                TEMP = TEMP.replace("\"","")
-                TEMP = TEMP.rstrip()
-                TEMP = TEMP.lstrip()
+                TEMP = TEMP.strip()
+                print("BuildID: "+TEMP)
                 return TEMP
 
 def CheckForPatches(buildVersion):
