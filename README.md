@@ -60,13 +60,13 @@ First of all we need to ensure Space Engineers is setup properly:
 # Special notes:
 
 1. Do not accept the anonymous data collection dialog when the game starts that will break the game very badly!
-   If you have done it by accident you can go ino the config file located in your prefix location /drive_C/users/steamuser/Application Data/SpaceEngineers/SpaceEngineers.cfg and change the line under <Key>GDPRConsent</Key> that looks like <Value xsi:type="xsd:string">True</Value> to this <Value xsi:type="xsd:string">False</Value>
+   If you have done it by accident you can go into the config file located in your prefix location /drive_C/users/steamuser/Application Data/SpaceEngineers/SpaceEngineers.cfg and change the line under <Key>GDPRConsent</Key> that looks like <Value xsi:type="xsd:string">True</Value> to this <Value xsi:type="xsd:string">False</Value>
    Unfortunately it seems the window will appear every time you start the game so just hit escape or no, and it should be fine.
 2. In order to prevent the issue that freezes the game at startup until you hit escape, or click the mouse. You may find it advantageous to remove or rename the file here : /home/USER/.local/share/Steam/steamapps/common/SpaceEngineers/Content/Videos/KSH.wmv
 
 That should work for now.
 
 # Some more notes: IE The game is still a bit unstable.
-0) Multiplayer with other non-patched games(this includes windows servers) is not possible at this time. If you try it it will most likely crash the game. However patched Linux clients connecting to patched linux servers seems to work without issue.
+0) Multiplayer with other non-patched games (this includes windows servers) is not possible at this time. If you try it it will most likely crash the game. However patched Linux clients connecting to patched Linux servers seems to work without issue.
 1) It may freeze a few times during load, so forcibly quit and try loading again. You should be able to hit continue game, on the main screen, and it will load your last world. Even if you never got into the world to play.
 2) The game keeps running in the background even after closed, so you will have to manually kill the process every time you close the game.
