@@ -27,5 +27,5 @@
   Note you may have to reapply this fix if the game updates. It depends on if the file is changed durring the update.
   If you encounter issues try following these steps again.
   
-  ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out..
+  ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
