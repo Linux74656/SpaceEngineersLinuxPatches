@@ -8,7 +8,7 @@ import shutil
 
 # Unchanged and resued variables to ensure uniformity
 RepositoryURL  = "https://raw.github.com/Linux74656/SpaceEngineersLinuxPatches/master/"
-PatchFolderURL = "PatchFiles/"
+PatchFolderURL = "oldMonoStuff/PatchFiles/"
 ChecksumFile   = "checksum.json"
 FILEEXTENSTION = ".tar.gz"
 SandboxDLLName = "Sandbox.Game.dll"
