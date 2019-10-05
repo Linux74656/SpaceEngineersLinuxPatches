@@ -1,5 +1,5 @@
 # This is currently the easiest solution to getting Space Engineers to run smoothly using DotNet:
-### This guide assumes you have already have Steamplay/Proton installed with all of the prerequisites and such, as well as Space Engineers, and winetricks. If not you can check around the internet for guides that can explain it better than I can!
+### This guide assumes you have already have Steamplay/Proton installed with all of the prerequisites and such, as well as Space Engineers, and winetricks. If not, you can check around the internet for guides that can explain it much better than I can!
 
 ## Step 0:
   Backup any save data, blueprints, ETC...
@@ -7,15 +7,16 @@
 
 ## Step 1:
   Ensure winetricks is up to date.
+  
   sudo winetricks --self-update
 
 ## Step 2:
   Create your wine prefix like you normally do with dotnet
   
   WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47
-
+  
 ## Step 3:
-  Open you Space Engineers bin64 directory: usually at $HOME/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
+  Open your Space Engineers bin64 directory: usually at $HOME/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
   In this folder find the file SpaceEngineers.exe.config and open it in a text editor(Gedit, Kwrite, ETC...). 
   
   You should see something like this:
@@ -28,7 +29,7 @@
   
   Save the file and close it.
   
-  ### If you want to avoid the freeze until user input when the game starts, rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
+  ### If you want to avoid the startup freeze that requires user input to get past the splash screen, rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
   
   Congratulations Space Engineers should now work properly on Linux. Have fun and enjoy!
   
