@@ -17,13 +17,14 @@
   
 ## Step 3:
   Open your Space Engineers bin64 directory: usually at $HOME/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
+  
   In this folder find the file **SpaceEngineers.exe.config** and open it in a text editor(Gedit, Kwrite, ETC...). 
   
   You should see something like this:
   ![before](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/Before.png)
     
 ## Step 4:
-  Now add `<gcServer enabled = "true" />` to a new line after the line that says `<runtime>`
+  Now add `<gcServer enabled = "true"/>` to a new line after the line that says `<runtime>`
   It should now look like this:
   ![before](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/After.png)
   
