@@ -17,7 +17,7 @@
   
 ## Step 3:
   Open your Space Engineers bin64 directory: usually at $HOME/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
-  In this folder find the file SpaceEngineers.exe.config and open it in a text editor(Gedit, Kwrite, ETC...). 
+  In this folder find the file **SpaceEngineers.exe.config** and open it in a text editor(Gedit, Kwrite, ETC...). 
   
   You should see something like this:
   ![before](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/Before.png)
@@ -29,7 +29,7 @@
   
   Save the file and close it.
   
-  ### If you want to avoid the startup freeze that requires user input to get past the splash screen, rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
+  ### Not mandatory but, if you want to avoid the startup freeze that requires user input to get past the splash screen, rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
   
   Congratulations Space Engineers should now work properly on Linux. Have fun and enjoy!
   
