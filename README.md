@@ -8,12 +8,12 @@
 ## Step 1:
   Ensure winetricks is up to date.
   
-  sudo winetricks --self-update
+  `sudo winetricks --self-update`
 
 ## Step 2:
   Create your wine prefix like you normally do with dotnet
   
-  WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47
+  `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47`
   
 ## Step 3:
   Open your Space Engineers bin64 directory: usually at $HOME/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
