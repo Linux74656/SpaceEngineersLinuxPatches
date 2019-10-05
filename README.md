@@ -11,6 +11,7 @@
 
 ## Step 2:
   Create your wine prefix like you normally do with dotnet
+  
   WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47
 
 ## Step 3:
