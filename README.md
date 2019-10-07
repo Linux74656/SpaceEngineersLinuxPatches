@@ -37,26 +37,26 @@
   
   # Known issues:
   
-  ### Issue 1:
+  ### Issue 1:  
   Broken starup and misssing videos, causing startup freeze that requires user input to get past the splash screen.
+  
   ### Known Fix:
   Rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
   
-  ### Issue 2:
+  ### Issue 2:  
   Upon startup the game will show this error one or more times.
   
   ![rundllerror](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/rundll32.png)
   
-  ### Known Fix:
+  ### Known Fix:  
   Just hit no each time it appears. It should not impact the ability of the game to run.
   
-  ### Issue 3:
+  ### Issue 3:  
   Some users report that faudio has looping sound issues.
   
-  ### Known Fix:
+  ### Known Fix:  
   None is known at this time. More testing is required.
-  
-  
+    
   
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
