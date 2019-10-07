@@ -53,6 +53,7 @@
   
   2) Run `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks`
   In the library tab of the configuaion window add rundll32.exe to the New everride for library box and click add. Then find it in the list below and click edit and ansure disabled is selected. (See image below:)
+  
   ![rundlldisable](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/disablerundll32.png)
   
   ### Issue 3:  
