@@ -30,12 +30,33 @@
   
   Save the file and close it.
   
-  ### Not mandatory but, if you want to avoid the startup freeze that requires user input to get past the splash screen, rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
-  
   Congratulations Space Engineers should now work properly on Linux. Have fun and enjoy!
   
   Note you may have to reapply these fixes if the game updates. It depends on if the file is changed durring the update.
   If you encounter issues try following these steps again.
+  
+  # Known issues:
+  
+  ### Issue 1:
+  Broken starup and misssing videos, causing startup freeze that requires user input to get past the splash screen.
+  ### Known Fix:
+  Rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
+  
+  ### Issue 2:
+  Upon startup the game will show this error one or more times.
+  
+  ![rundllerror](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/rundll32.png)
+  
+  ### Known Fix:
+  Just hit no each time it appears. It should not impact the ability of the game to run.
+  
+  ### Issue 3:
+  Some users report that faudio has looping sound issues.
+  
+  ### Known Fix:
+  None is known at this time. More testing is required.
+  
+  
   
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
