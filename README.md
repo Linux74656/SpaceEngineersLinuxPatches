@@ -48,7 +48,7 @@
   
   ![rundllerror](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/rundll32.png)
   
-  ### Known Fix:
+  ### Known Fixes:
   1) Just hit no each time it appears. It should not impact the ability of the game to run.
   
   2) Run `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks`
