@@ -1,6 +1,18 @@
 # This is currently the easiest solution to getting Space Engineers to run smoothly using DotNet:
 ### This guide assumes you have already have Steamplay/Proton installed with all of the prerequisites and such, as well as Space Engineers, and winetricks. If not, you can check around the internet for guides that can explain it much better than I can!
 
+#### Here is a list of Known Issues, and potetial solutions:
+  
+  1: ![Freeze at starup](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-1)
+  
+  2: ![rundll32.exe error popup](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-2)
+  
+  3: ![Looping Sound](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-3)
+  
+  4: ![Popping/Crackling Sound](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-4)
+  
+## The Setup Guide:
+
 ## Step 0:
   Backup any save data, blueprints, ETC...
   Then verify the integrity of your game files in Steam.
@@ -36,17 +48,6 @@
   If you encounter issues try following these steps again.
   
   # Known issues:
-  
-  ##### List of Known Issues (Scroll down to find more information on an issue listed):
-  
-  1: ![Freeze at starup](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-1)
-  
-  2: ![rundll32.exe error popup](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-2)
-  
-  3: ![Looping Sound](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-3)
-  
-  4: ![Popping/Crackling Sound](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-4)
-  
   
   ### Issue 1:  
   Broken starup and misssing videos, causing startup freeze that requires user input to get past the splash screen.
