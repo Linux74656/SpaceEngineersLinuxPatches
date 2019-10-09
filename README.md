@@ -11,7 +11,7 @@
   `sudo winetricks --self-update`
 
 ## Step 2:
-  Create your wine prefix with dotnet
+  Create your wine prefix in compatdata with dotnet
   
   `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47`
   
