@@ -11,7 +11,7 @@
   `sudo winetricks --self-update`
 
 ## Step 2:
-  Create your wine prefix in compatdata with dotnet
+  Create your wine prefix in the compatdata folder in steamapps/common/
   
   `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47`
   
@@ -63,7 +63,14 @@
   
   ### Known Fix:  
   None is known at this time. More testing is required.
-    
+  
+  ### Issue 4:
+  While using faudio some users report crackling or popping audio.
+  
+  ### Known Fix:
+  Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the folowing in the box that appears.
+    `PULSE_LATENCY_MSEC=60`
+   then hit ok on the launch options window. If you are still experiinceing issues, try modifying the value of PULSE_LATENCY_MSEC try 30, or 90 instead of 60.
   
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
