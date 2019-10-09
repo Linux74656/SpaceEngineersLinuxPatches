@@ -39,13 +39,13 @@
   
   ##### List of Known Issues (Scroll down to find more information on an issue listed):
   
-  1: Freeze at starup
+  1: ![Freeze at starup](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-1)
   
-  2: rundll32.exe error popup
+  2: ![rundll32.exe error popup](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-2)
   
-  3: Looping Sound
+  3: ![Looping Sound](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-3)
   
-  4: Popping/Crackling Sound
+  4: ![Popping/Crackling Sound](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-4)
   
   
   ### Issue 1:  
