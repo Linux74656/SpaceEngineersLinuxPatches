@@ -37,6 +37,17 @@
   
   # Known issues:
   
+  ##### List of Known Issues (Scroll down to find more information on an issue listed):
+  
+  1: Freeze at starup
+  
+  2: rundll32.exe error popup
+  
+  3: Looping Sound
+  
+  4: Popping/Crackling Sound
+  
+  
   ### Issue 1:  
   Broken starup and misssing videos, causing startup freeze that requires user input to get past the splash screen.
   
