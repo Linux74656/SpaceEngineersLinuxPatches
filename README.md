@@ -1,7 +1,7 @@
 # This is currently the easiest solution to getting Space Engineers to run smoothly using DotNet:
 ### This guide assumes you have already have Steamplay/Proton installed with all of the prerequisites and such, as well as Space Engineers, and winetricks. If not, you can check around the internet for guides that can explain it much better than I can!
 
-#### Here is a list of Known Issues, and potetial solutions:
+#### Here is a list of Known Issues, and potential solutions:
   
   1: ![Freeze at starup](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md#issue-1)
   
