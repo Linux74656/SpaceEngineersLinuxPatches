@@ -80,7 +80,9 @@
   While using faudio some users report crackling or popping audio.
   
   ### Known Fix:
-  Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the folowing in the box that appears. (If somthing is already in the box add this after those items but before %command% if the box is empty add %command% after PULSE_LATENCY_MSEC=60 make suer there is a space between each command and a space between PULSE_LATENCY_MSEC=60 and %command%)
+  Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the folowing in the box that appears. 
+  NOTE: If somthing is already in the box add this after those items but before %command% if the box is empty add %command% after PULSE_LATENCY_MSEC=60 make sure there is a space between each command and a space between PULSE_LATENCY_MSEC=60 and %command%
+  
     `PULSE_LATENCY_MSEC=60`
    then hit ok on the launch options window. If you are still experiinceing issues, try modifying the value of PULSE_LATENCY_MSEC try 30, or 90 instead of 60.
   
