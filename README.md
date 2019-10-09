@@ -82,11 +82,13 @@
   ### Known Fix:
   Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the folowing in the box that appears.
   
-  NOTE: If somthing is already in the box add PULSE_LATENCY_MSEC=60 after those items but before %command% e.g. `DXVK_HUD=full PULSE_LATENCY_MSEC=60 %command%` Make sure you have spaces between each item.
+  A) If somthing is already in the box add PULSE_LATENCY_MSEC=60 after those items but before %command% 
   
-  If the box is empty add:
+   e.g. `DXVK_HUD=full PULSE_LATENCY_MSEC=60 %command%` Make sure you have spaces between each item.
   
-  `PULSE_LATENCY_MSEC=60 %command%`
+ B) If the box is empty add:
+  
+   `PULSE_LATENCY_MSEC=60 %command%`
     
    Then hit ok on the launch options window. If you are still experiinceing issues, try modifying the value of PULSE_LATENCY_MSEC try 30, or 90 instead of 60.
   
