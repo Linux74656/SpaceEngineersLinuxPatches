@@ -34,7 +34,7 @@
   In this folder find the file **SpaceEngineers.exe.config** and open it in a text editor(Gedit, Kwrite, ETC...). 
 
   You should see something like this:
-  ![before](/home/monkey/Projects/SpaceEngineersLinuxPatches/Before.png)
+  ![before](Before.png)
     
 
 ## Step 4:
