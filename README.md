@@ -34,12 +34,13 @@
   In this folder find the file **SpaceEngineers.exe.config** and open it in a text editor(Gedit, Kwrite, ETC...). 
 
   You should see something like this:
-  ![before](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/Before.png)
+  ![before](/home/monkey/Projects/SpaceEngineersLinuxPatches/Before.png)
     
+
 ## Step 4:
   Now add `<gcServer enabled = "true"/>` to a new line after the line that says `<runtime>`
   It should now look like this:
-  ![before](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/After.png)
+  ![before](After.png)
 
   Save the file and close it.
 
@@ -51,7 +52,7 @@
   # Known issues:
 
   ### Issue 1:  
-  Broken starup and misssing videos, causing startup freeze that requires user input to get past the splash screen.
+  Broken startup and missing videos, causing startup freeze that requires user input to get past the splash screen.
 
   ### Known Fix:
   Rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
@@ -59,7 +60,7 @@
   ### Issue 2:  
   Upon startup the game will show this error one or more times.
 
-  ![rundllerror](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/rundll32.png)
+  ![rundllerror](rundll32.png)
 
   ### Known Fixes:
   1) Just hit no each time it appears. It should not impact the ability of the game to run.
@@ -67,9 +68,9 @@
   #### OR
 
   2) Run `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks`
-  In the library tab of the configuaion window add rundll32.exe to the New everride for library box and click add. Then find it in the list below and click edit and ensure disabled is selected. (See image below:) Click apply, then close the window.
+  In the library tab of the configuration window add rundll32.exe to the New override for library box and click add. Then find it in the list below and click edit and ensure disabled is selected. (See image below:) Click apply, then close the window.
 
-  ![rundlldisable](https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/disablerundll32.png)
+  ![rundlldisable](disablerundll32.png)
 
   ### Issue 3:  
   Some users report that faudio has looping sound issues.
@@ -81,9 +82,9 @@
   While using faudio some users report crackling or popping audio.
 
   ### Known Fix:
-  Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the folowing in the box that appears.
+  Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the following in the box that appears.
 
-  A) If somthing is already in the box add PULSE_LATENCY_MSEC=60 after those items but before %command% 
+  A) If something is already in the box add PULSE_LATENCY_MSEC=60 after those items but before %command% 
 
    e.g. `DXVK_HUD=full PULSE_LATENCY_MSEC=60 %command%` Make sure you have spaces between each item.
 
@@ -91,7 +92,7 @@
 
    `PULSE_LATENCY_MSEC=60 %command%`
     
-   Then hit ok on the launch options window. If you are still experiinceing issues, try modifying the value of PULSE_LATENCY_MSEC try 30, or 90 instead of 60.
+   Then hit ok on the launch options window. If you are still experiencing issues, try modifying the value of PULSE_LATENCY_MSEC try 30, or 90 instead of 60.
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
