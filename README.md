@@ -5,10 +5,10 @@
 
 
 
-1. [Freeze at starup](#Issue 1)
-2. [rundl32.exe error popup](#Issue 2)
+1. [Freeze at starup](#Issue-1)
+2. [rundl32.exe error popup](#Issue-2)
 
-  3: [Looping Sound](#issue 3)
+  3: [Looping Sound](#issue-3)
 
   4: [Popping/Crackling Sound](#issue-4)
 
