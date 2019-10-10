@@ -12,6 +12,7 @@
 4. [Popping/Crackling Sound](#issue-4)
 
 # The Automated Setup Guide:
+### This will create the wineprefix and modify the config file for you. If you want you can scroll down and find the manual instruction on what this patcher automates.
 
 ## Step 0:
   Backup any save data, blueprints, ETC...
