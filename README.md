@@ -3,19 +3,40 @@
 
 #### Here is a list of Known Issues, and potential solutions:
 
+1. [Freeze at starup](#issue-1)
 
-
-1. [Freeze at starup](#Issue-1)
-2. [rundl32.exe error popup](#Issue-2)
+2. [rundl32.exe error popup](#issue-2)
 
 3. [Looping Sound](#issue-3)
 
 4. [Popping/Crackling Sound](#issue-4)
 
-## The Setup Guide:
+# The Automated Setup Guide:
 
 ## Step 0:
   Backup any save data, blueprints, ETC...
+  Then verify the integrity of your game files in Steam.
+
+## Step 1:
+  Ensure winetricks is up to date.
+
+  `sudo winetricks --self-update`
+
+## Step 2:
+  Download(Save to downloads) this python script: ![autoprefix-patcher.py](autoprefix-patcher.py)
+  
+  Run this script with 
+  
+  `python3 autoprefix-patcher.py`
+  
+  Note: The script will ask you if it needs help, so make sure you read what it says! It can apply another fix for one of the issues below(freeze at startup) and will ask you if you want to fix it.
+
+ Congratulations Space Engineers should now work properly on Linux. Have fun and enjoy!
+
+# The Manual Setup Guide(Skip if you used the autopatcher):
+
+## Step 0:
+  Backup any save data, blueprints, ETC...  
   Then verify the integrity of your game files in Steam.
 
 ## Step 1:
