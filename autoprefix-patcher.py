@@ -32,16 +32,40 @@ def ApplyPatch():
         print("Space Engineers files not found! Check the install location was entered correctly. "
         +"Or verify the integrity of your game files through steam.")
         sys.exit()
+
+    # QUICK AND DRITY SOLUTION BUT IT SHOULD DO.
     configDom = ElTree.parse(InstallLocation+SeBinDir+xmlFileName)
     root = configDom.getroot()
-    attribute = {'enabled': 'true'}
     runtimenode = root.find("runtime")
     if runtimenode.find("gcServer") == None:
-        ElTree.SubElement(runtimenode,'gcServer', attribute)
-        configDom.write(InstallLocation+SeBinDir+xmlFileName)
+        ConfigFile = open(InstallLocation+SeBinDir+xmlFileName, 'r')
+        contents = ConfigFile.readlines()
+        LINENUM=0
+        for line in contents:
+            LINENUM+=1
+            if '<runtime>' in line:
+                contents.insert(LINENUM, "  <gcServer enabled = \"true\" />"+"\n")
+        ConfigFile.close()
+        ConfigFile = open(InstallLocation+SeBinDir+xmlFileName, 'w')
+        for eachitem in contents:
+            ConfigFile.write(eachitem)
+        ConfigFile.close()
         print("Config Patch Applied! \n")
     else:
         print("It seems the patch is already applied! \n")
+        # Continue with program to increase functionality
+
+    # For the love of all sanity this is broken just ignore it!!!!!!!!!!!!!
+    #configDom = ElTree.parse(InstallLocation+SeBinDir+xmlFileName)
+    #root = configDom.getroot()
+    #attribute = {'enabled': 'true'}
+    #runtimenode = root.find("runtime")
+    #if runtimenode.find("gcServer") == None:
+    #    ElTree.SubElement(runtimenode,'gcServer', attribute)
+    #    configDom.write(InstallLocation+SeBinDir+xmlFileName)
+    #    print("Config Patch Applied! \n")
+    #else:
+    #    print("It seems the patch is already applied! \n")
         # Continue with program to increase functionality
 
     response = input("Would you like to apply a fix to prevent startup freezing? "
