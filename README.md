@@ -35,6 +35,7 @@
  Congratulations Space Engineers should now work properly on Linux. Have fun and enjoy!
 
 # The Manual Setup Guide(Skip if you used the autopatcher):
+### You can use proton tricks is you already have it installed.
 
 ## Step 0:
   Backup any save data, blueprints, ETC...  
@@ -44,11 +45,24 @@
   Ensure winetricks is up to date.
 
   `sudo winetricks --self-update`
+  
+### OR with protontricks
+
+  Ensure protontricks is up to date.
+  
+  follow the instructions ![here](https://github.com/Matoking/protontricks) based on how you installed it.
 
 ## Step 2:
-  Create your wine prefix in the compatdata folder in steamapps/common/
+  Create your wine prefix with winetricks in the compatdata folder in steamapps/common/
 
   `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47`
+  
+  ### OR with protontricks
+
+  Create your wine prefix using protontricks if it is already installed, or if you want to install it from the instructions ![here](https://github.com/Matoking/protontricks).
+  
+  protontricks 244850 --force -q dotnet472 vcrun2015 faudio d3dcompiler_47
+  
 
 ## Step 3:
   Open your Space Engineers bin64 directory: usually at $HOME/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
