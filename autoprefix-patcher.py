@@ -56,6 +56,7 @@ def ApplyPatch():
         # Continue with program to increase functionality
 
     # For the love of all sanity this is broken just ignore it!!!!!!!!!!!!!
+    # It does not get the namespace properly and thusly put ns0: infront of everything!
     #configDom = ElTree.parse(InstallLocation+SeBinDir+xmlFileName)
     #root = configDom.getroot()
     #attribute = {'enabled': 'true'}
