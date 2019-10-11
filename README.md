@@ -35,33 +35,39 @@
  Congratulations Space Engineers should now work properly on Linux. Have fun and enjoy!
 
 # The Manual Setup Guide(Skip if you used the autopatcher):
-### You can use proton tricks is you already have it installed.
+
 
 ## Step 0:
   Backup any save data, blueprints, ETC...  
   Then verify the integrity of your game files in Steam.
 
+
 ## Step 1:
+### With winetricks
   Ensure winetricks is up to date.
 
   `sudo winetricks --self-update`
-  
-### OR with protontricks
+___________________
+### OR with protontricks (You can use protontricks is you already have it installed.)
 
   Ensure protontricks is up to date.
   
   follow the instructions ![here](https://github.com/Matoking/protontricks) based on how you installed it.
 
+
 ## Step 2:
+### With winetricks
+
   Create your wine prefix with winetricks in the compatdata folder in steamapps/common/
 
   `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47`
-  
-  ### OR with protontricks
+___________________
+### OR with protontricks
 
   Create your wine prefix using protontricks if it is already installed, or if you want to install it from the instructions ![here](https://github.com/Matoking/protontricks).
   
   protontricks 244850 --force -q dotnet472 vcrun2015 faudio d3dcompiler_47
+  
   
 
 ## Step 3:
@@ -72,6 +78,7 @@
   You should see something like this:
   ![before](Before.png)
     
+  
 
 ## Step 4:
   Now add `<gcServer enabled = "true"/>` to a new line after the line that says `<runtime>`
@@ -84,6 +91,7 @@
 
   Note you may have to reapply these fixes if the game updates. It depends on if the file is changed durring the update.
   If you encounter issues try following these steps again.
+___________________  
 
   # Known issues:
 
@@ -92,6 +100,7 @@
 
   ### Known Fix:
   Rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
+___________________  
 
   ### Issue 2:  
   Upon startup the game will show this error one or more times.
@@ -107,18 +116,20 @@
   In the library tab of the configuration window add rundll32.exe to the New override for library box and click add. Then find it in the list below and click edit and ensure disabled is selected. (See image below:) Click apply, then close the window.
 
   ![rundlldisable](disablerundll32.png)
+___________________  
 
   ### Issue 3:  
   Some users report that faudio has looping sound issues.
 
   ### Known Fix:  
   None is known at this time. More testing is required.
+___________________  
 
   ### Issue 4:
   While using faudio some users report crackling or popping audio.
 
   ### Known Fix:
-  Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the following in the box that appears.
+  Try adding the following to your steam launch options(right click Space Engineers in steam, click Properties, then in the General tab, click SET LAUNCH OPTIONS...) add the following in the box that appears.  
 
   A) If something is already in the box add PULSE_LATENCY_MSEC=60 after those items but before %command% 
 
@@ -129,6 +140,7 @@
    `PULSE_LATENCY_MSEC=60 %command%`
     
    Then hit ok on the launch options window. If you are still experiencing issues, try modifying the value of PULSE_LATENCY_MSEC try 30, or 90 instead of 60.
+___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
