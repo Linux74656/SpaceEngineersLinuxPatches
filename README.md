@@ -68,7 +68,6 @@ ___________________
   
   protontricks 244850 --force -q dotnet472 vcrun2015 faudio d3dcompiler_47
   
-  
 
 ## Step 3:
   Open your Space Engineers bin64 directory: usually at $HOME/.local/share/Steam/steamapps/common/SpaceEngineers/Bin64
