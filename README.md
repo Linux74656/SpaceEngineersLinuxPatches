@@ -147,7 +147,7 @@ ___________________
   When the user alt+tab from the game, the game will keep the mouse from moving to another screen or selecting other windows. It also prevents keyboard input to other windows, even if they are on the same screen, or there is only one monitor.
 
   ### Known Fix:  
-  The known workaround causes more issues than it fixes. If you are so inclinded to try it you can find it in issue #14 (Mouse Capture) of this repository. #Be warned this fix breaks other things. Try at your own risk!
+  The known workaround causes more issues than it fixes. If you are so inclinded to try it you can find it in issue ![#14 (Mouse Capture)](https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/14) #Be warned this fix breaks other things. Try at your own risk!
 ___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
