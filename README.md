@@ -11,6 +11,8 @@
 
 4. [Popping/Crackling Sound](#issue-4)
 
+5. [Mouse/Keyboard issues when changing window focus(alt+tab)](#issue-5)
+
 # The Automated Setup Guide:
 ### This will create the wineprefix and modify the config file for you. If you want you can scroll down and find the manual instruction on what this patcher automates.
 
@@ -139,6 +141,13 @@ ___________________
    `PULSE_LATENCY_MSEC=60 %command%`
     
    Then hit ok on the launch options window. If you are still experiencing issues, try modifying the value of PULSE_LATENCY_MSEC try 30, or 90 instead of 60.
+___________________  
+
+  ### Issue 5:  
+  When the user alt+tab from the game, the game will keep the mouse from moving to another screen or selecting other windows. It also prevents keyboard input to other windows, even if they are on the same screen, or there is only one monitor.
+
+  ### Known Fix:  
+  The known workaround causes more issues than it fixes. If you are so inclinded to try it you can find it in issue #14 (Mouse Capture) of this repository. #Be warned this fix breaks other things. Try at your own risk!
 ___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
