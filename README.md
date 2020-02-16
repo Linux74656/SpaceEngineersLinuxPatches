@@ -13,6 +13,8 @@
 
 5. [Mouse/Keyboard issues when changing window focus(alt+tab)](#issue-5)
 
+6. [Game crashes shortly after start with `System.OutOfMemoryException: Array dimensions exceeded supported range.` error in log.](#issue-6)
+
 # The Automated Setup Guide:
 ### This will create the wineprefix and modify the config file for you. If you want you can scroll down and find the manual instruction on what this patcher automates.
 
