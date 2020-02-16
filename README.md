@@ -150,5 +150,16 @@ ___________________
   The known workaround causes more issues than it fixes. If you are so inclinded to try it you can find it in issue ![#14 (Mouse Capture)](https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/14) #Be warned this fix breaks other things. Try at your own risk!
 ___________________  
 
+  ### Issue 6:  
+  Game crashes shortly after start with `System.OutOfMemoryException: Array dimensions exceeded supported range.` error in log.
+
+  ### Known Fix:  
+  Game sends analytics to 81.0.234.196 and 88.146.207.227 (Keen SWH analytics servers) which apparently sends back some garbage that causes the issue (unintentionally). To resolve the issue block this service via:
+  
+  `sudo iptables -A INPUT -s 88.146.207.227 -j DROP`
+  
+___________________  
+
+
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
