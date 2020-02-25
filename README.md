@@ -108,7 +108,7 @@ ___________________
   ### Issue 2:  
   Upon startup the game will show this error one or more times.
 
-  ![rundllerror](rundll32.png)
+  ![rundllerror](ignorethis/rundll32.png)
 
   ### Known Fixes:
   1) Just hit no each time it appears. It should not impact the ability of the game to run.
@@ -118,7 +118,7 @@ ___________________
   2) Run `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks`
   In the library tab of the configuration window add rundll32.exe to the New override for library box and click add. Then find it in the list below and click edit and ensure disabled is selected. (See image below:) Click apply, then close the window.
 
-  ![rundlldisable](disablerundll32.png)
+  ![rundlldisable](ignorethis/disablerundll32.png)
 ___________________  
 
   ### Issue 3:  
