@@ -15,6 +15,9 @@
 
 6. [Game crashes shortly after start with `System.OutOfMemoryException: Array dimensions exceeded supported range.` error in log.](#issue-6)
 
+7.[Game hardlocs(sometimes including entire OS) when using 5700/5700xt](#issue-7)
+
+
 # The Automated Setup Guide:
 ### This will create the wineprefix and modify the config file for you. If you want you can scroll down and find the manual instruction on what this patcher automates.
 
@@ -162,6 +165,12 @@ ___________________
   
 ___________________  
 
+  ### Issue 7:  
+  The game will freeze and accept no input just after loading a world. This will also sometimes lockup the OS. This seems to only happen on the newest line of AMD graphics cards(currently tested(5700/5700XT)).
+
+  ### Known Fix:  
+  Set the in-game voxel quality to it's lowest setting. This seems to have solved the issue.
+___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
   ## and Huge thanks to everyone else on https://github.com/ValveSoftware/Proton/issues/1792 for helping solve these issues.
