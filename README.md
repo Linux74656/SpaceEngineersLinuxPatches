@@ -79,14 +79,14 @@ ___________________
   In this folder find the file **SpaceEngineers.exe.config** and open it in a text editor(Gedit, Kwrite, ETC...). 
 
   You should see something like this:
-  ![before](Before.png)
+  ![before](ignorethis/Before.png)
     
   
 
 ## Step 4:
   Now add `<gcServer enabled = "true"/>` to a new line after the line that says `<runtime>`
   It should now look like this:
-  ![before](After.png)
+  ![before](ignorethis/After.png)
 
   Save the file and close it.
 
