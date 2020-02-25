@@ -130,7 +130,8 @@ public class PatchGUI
     
     public static void main(String args[])
     {
-        WindowFont = new Font(Font.SERIF,Font.BOLD, 14);//APPLY THIS TO WINDOWS WHERE THE USER WILL HAVE TO DO A LOT OF READING
+        //APPLY THIS TO WINDOWS WHERE THE USER WILL HAVE TO DO A LOT OF READING
+        WindowFont = new Font(Font.SERIF,Font.BOLD, 14);//THIS SHOULD BE AVAILIBLE WITH JAVA RIGHT? I HOPE SO.
         //CREATE A LOGFILE SO THE USER CAN UPLOAD IF THEY ENCOUNTER A PROBLEM
         LOGWRITER("-------------------------------------------", false);
         LOGWRITER("-------------NEW PROGRAM START-------------", false);
@@ -357,17 +358,16 @@ public class PatchGUI
         MainWindow.setVisible(true);
     }
     
+     ///////////////////////////////////////////////////////////////////////////
+///// EVERYTHING BELOW HERE SHOULD BE DONE AND TESTED... SHOULD BE... HOPEFULLY /////
+     /////////////////////////////////////////////////////////////////////////// ... turns out it definitely is not :(
+    
+    //SHOW THE SUER HELP IF THEY WANT IT.
     public static void ShowHelpPopup()
     {
         // EXPLAIN WHERE AND HOW TO FIND SE INSTALL LOCATION
         // EXPLAIN WINE AND WINETRICKS INSTALL AND UPDATES
         
-/*TODO:
-        Make Popup Window With Close Option And TEXT AREA
-        ADD TEXT TO TEXT AREA TO A SCROLLPANE
-        
-        
-*/
         JTextArea TextGoesHere = new JTextArea();
         TextGoesHere.setLineWrap(true);
         TextGoesHere.setEditable(false);//SHOULD STILL BE SELECTABLE THOUGH
@@ -430,10 +430,6 @@ public class PatchGUI
     }
     
     
-     ///////////////////////////////////////////////////////////////////////////
-///// EVERYTHING BELOW HERE SHOULD BE DONE AND TESTED... SHOULD BE... HOPEFULLY /////
-     /////////////////////////////////////////////////////////////////////////// ... it definitely is not :(
-    
     //WHY DOES JAVA NOT HAVE A NATIVE WAY TO DELETE A FULL DIRECTORY? 
         //IF I WANTED TO HAVE TO WRITE MY OWN FUNCTIONS FOR THE MOST BASIC OF TASK I WOULD USE C
     public static void deletePrefix()
@@ -444,7 +440,7 @@ public class PatchGUI
             String PrefixVar = PrefixFolder.getAbsolutePath();
             //ASK USER IF THEY WANT TO GET REPSONSE THEN CONTINUE
             int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your prefix?", "Delete confirmation:", JOptionPane.YES_NO_OPTION);
-            System.out.println("INT: "+confirm);//0=yes 1=no
+            //System.out.println("INT: "+confirm);//0=yes 1=no//DEBUG
             if(confirm == 0)
             {
                 textareaOutput.append("Deleting prefix!");
@@ -480,7 +476,7 @@ public class PatchGUI
         else
         {CreateAlertPopup("Prefix location not found!");}
     }
-    
+    //APPLY THE ENTIRE POURPOSE OF THIS PROJECT
     public static void applyConfigPatch()
     {
         if(PatchXML)//IF FIX CONFIG FILE
@@ -502,7 +498,7 @@ public class PatchGUI
                 {
                     if(nodelistRuntime.item(I).getNodeName().equals("gcServer"))
                     {
-                        System.out.println("FOUND IT! ");
+                        //System.out.println("FOUND IT! ");//DEBUG
                         textareaOutput.append("gcServer tag found. Config patch not needed.");
                         LOGWRITER("gcServer tag found. Config patch not needed.", false);
                         FOUND=true;
@@ -533,7 +529,7 @@ public class PatchGUI
             }
         }//NO ELSE NEEDED AS NO OTHER ACTIONS CAN BE TAKEN
     }
-    
+    //MAKE THE PREFIX
     public static void createPrefix()
     {
         if(CreatePrefix)
@@ -548,7 +544,7 @@ public class PatchGUI
             }
             else
             {
-                System.out.println("PREFIXFOLDER: "+WinePrefix);
+                //System.out.println("PREFIXFOLDER: "+WinePrefix);//DEBUG
                 runThreadedWinePrefixinstall(WinePrefix,false);
             }
         }
@@ -612,6 +608,7 @@ public class PatchGUI
     //THIS DISABLES MOST UI ELEMENTS TO PREVENT THE USER FROM TAMPERING WHILE THE PROGRAM IS DOING SOMTHING
     public static void ToggleUIEnabled(boolean ONorOFF)
     {
+        //INCASE SOMTHING STALLS LEAVE CLOSE BUTTON ALONE SO THE SUER CAN CLOSE THE APPLICATION
         buttonBrowse.setEnabled(ONorOFF);
         checkboxCreatePrefix.setEnabled(ONorOFF);
         checkboxPatchXML.setEnabled(ONorOFF);
@@ -641,6 +638,8 @@ public class PatchGUI
     
     public static void CreateAlertPopup(String Text)
     {
+        //MAKE THIS FONT LARGER AS WELL.
+        
         //JOptionPane popup = new JOptionPane();// MAY NOT BE NEEDED IF IT CALLS JOptionPane STATICALLY
         JOptionPane.showMessageDialog(MainWindow, Text);
         //WELL THIS WAS SIMPLER THAN IT THOUGHT IT WOULD BE...
@@ -703,7 +702,8 @@ public class PatchGUI
         }
         else
         {
-            System.out.println("WINE VERSION ERROR CHECK LOG!");
+            //System.out.println("WINE VERSION ERROR CHECK LOG!");//DEBUG
+            LOGWRITER("WINE NOTE INSTALLED.", false);
             CreateAlertPopup("Could not get wine version!\n Ensure wine is installed. wiki.winehq.org/Download");
         }
 //WINETRICKS
@@ -716,13 +716,14 @@ public class PatchGUI
             int DATECODE=Integer.parseInt(WINETRICKSVERSION.substring(0,8));//FOUR DIGIT YEAR
             if(DATECODE<20191224)//20191224 **JUST FOR SIMPLICITY USE THIS AS THE START
             {
-                LOGWRITER("ERROR-PATCHER: WINETRICKS VERSION OUT OF DATE!", false);
+                LOGWRITER("WINETRICKS VERSION OUT OF DATE!", false);
                 CreateAlertPopup("Winetricks is out of date.\nEnsure winetricks is updated.");
             }//ELSE NOT NEEDED AS IT ALREADY IS GOOD TO GO
         }
         else
         {
-            System.out.println("WINETRICKS VERSION ERROR CHECK LOG!");
+            //System.out.println("WINETRICKS VERSION ERROR CHECK LOG!");//DEBUG
+            LOGWRITER("WINETRICKS NOT INSTALLED.", false);
             CreateAlertPopup("Could not get winetricks version!\nEnsure winetricks is installed.");
         }
 //CABEXTRACT-FOR WINETRICKS(WAS A PROBLEM FOR SOME USERS)
@@ -730,7 +731,8 @@ public class PatchGUI
         String CABEXTRACTVERSION= getConsoleStreamfromCommand("cabextract --version");
         if(CABEXTRACTVERSION==null)
         {
-            System.out.println("CABEXTRACT VERSION ERROR CHECK LOG!");
+            //System.out.println("CABEXTRACT VERSION ERROR CHECK LOG!");//DEBUG
+            LOGWRITER("CABEXTRACT OUT OF DATE.", false);
             CreateAlertPopup("Could not get cabextract version!"
                     + "\nEnsure cabextract is installed.");//SHOW POPUP WITH INFORMATION
         }//ELSE NOT NEEDED AS CABEXTRACT IS ALREADY INSTALLED
@@ -812,7 +814,7 @@ public class PatchGUI
                 }
                 for(int I=0;I<COMMANDS.size();I++)
                 {
-                    System.out.println("WINETRICKS: "+COMMANDS.get(I)[COMMANDS.get(I).length-1]);//DEBUG
+                    //System.out.println("WINETRICKS: "+COMMANDS.get(I)[COMMANDS.get(I).length-1]);//DEBUG
                     ProcessBuilder procbuild = new ProcessBuilder(COMMANDS.get(I));
                     Map<String, String> envvar = procbuild.environment();
                     envvar.put("WINEPREFIX",PrefixVar);
@@ -937,7 +939,7 @@ public class PatchGUI
           };
         worker.execute();
     }
-//DEBUG TOOLS
+//DEBUG TOOLS FROM SHIPOSUI
     public static void LOGWRITER(String TEXTTOWRITE, boolean PrependDateCode)
     {
         File LOGFILE= new File("PatcherLog.txt");
