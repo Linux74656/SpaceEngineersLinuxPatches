@@ -15,7 +15,7 @@
 
 6. [Game crashes shortly after start with `System.OutOfMemoryException: Array dimensions exceeded supported range.` error in log.](#issue-6)
 
-7. [Game hardlocs(sometimes including entire OS) when using 5700/5700xt](#issue-7)
+7. [Game hardlocks(sometimes including entire OS) when using 5700/5700xt](#issue-7)
 
 
 # The Automated Setup Guide:
