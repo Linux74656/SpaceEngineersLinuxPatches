@@ -17,6 +17,8 @@
 
 7. [Game hardlocks(sometimes including entire OS) when using 5700/5700xt](#issue-7)
 
+8. [SpaceEngineers.exe becomes zombie on exit](#issue-8)
+
 
 # The Automated Setup Guide:
 ### This will create the wineprefix and modify the config file for you. If you want you can scroll down and find the manual instruction on what this patcher automates.
@@ -170,6 +172,19 @@ ___________________
 
   ### Known Fix:  
   Set the in-game voxel quality to it's lowest setting. This seems to have solved the issue.
+___________________
+ 
+
+  ### Issue 8:  
+  From this issue https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/26
+  
+  SpaceEngineers.exe refuses to die after exiting the game.
+
+  ### Known Fix:
+  You can take a look at this script by inetknght:
+  https://github.com/inetknght/linux-profile/blob/master/.bash/kill_space_engineers.bash
+  
+  It will help eleminate those pesky zombie processes.
 ___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
