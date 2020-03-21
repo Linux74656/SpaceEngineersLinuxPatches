@@ -28,9 +28,13 @@
   Then verify the integrity of your game files in Steam.
 
 ## Step 1:
-  Ensure winetricks is up to date.
-
+  Ensure prerequisites are installed and up to date.
+  
+  Wine(Newest Version is Recommended). Find out more at winehq: https://wiki.winehq.org/Download
+  
+  Winetricks:
   `sudo winetricks --self-update`
+  
 
 ## Step 2:
   Download(Save to downloads) this python script: ![autoprefix-patcher.py](autoprefix-patcher.py)
@@ -52,6 +56,10 @@
 
 
 ## Step 1:
+Ensure prerequisites are installed and up to date.
+  
+  Wine(Newest Version is Recommended). Find out more at winehq: https://wiki.winehq.org/Download
+  
 ### With winetricks
   Ensure winetricks is up to date.
 
