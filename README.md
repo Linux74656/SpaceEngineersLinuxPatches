@@ -30,7 +30,7 @@
 ## Step 1:
   Ensure prerequisites are installed and up to date.
   
-  Wine(Newest Version is Recommended). Find out more at winehq: https://wiki.winehq.org/Download
+  Wine(5.0 or higher... although the newest version is recommended). Find out more at winehq: https://wiki.winehq.org/Download
   
   Winetricks:
   `sudo winetricks --self-update`
@@ -58,7 +58,7 @@
 ## Step 1:
 Ensure prerequisites are installed and up to date.
   
-  Wine(Newest Version is Recommended). Find out more at winehq: https://wiki.winehq.org/Download
+  Wine(5.0 or higher... although the newest version is recommended). Find out more at winehq: https://wiki.winehq.org/Download
   
 ### With winetricks
   Ensure winetricks is up to date.
