@@ -32,7 +32,8 @@
   
   Wine(5.0 or higher... although the newest version is recommended). Find out more at winehq: https://wiki.winehq.org/Download
   
-  Winetricks:
+  Winetricks: from here https://wiki.winehq.org/Winetricks then:
+  
   `sudo winetricks --self-update`
   
 
