@@ -19,8 +19,40 @@
 
 8. [SpaceEngineers.exe becomes zombie on exit](#issue-8)
 
+# New Automated Setup Guide:
 
-# The Automated Setup Guide:
+#### This can patch the original SE DOTNET issue and several others.
+
+### Step 0) Prerequisites
+
+This java program simply requires Java 7 or later. This should be standard on most modern Linux systems. If it is not you can search the internet for a specific guide on how to install it for your particular Linux distribution.
+
+### Step 1) Get it
+
+Download this pre-compiled jar file: ![PatcherGUI.jar](PatcherGUI.jar)
+If you would like to look at the source code or compile it yourself it is in this repository as Source-PatchGUI.java
+
+### Step 2) Run it
+
+Simply double click it and it should open. The program should be fairly intuitive and has a built-in help feature.
+
+IF YOU CAN NOT START THE PatcherGUI.jar, because computers… THEN CONTINUE. 
+
+Some distros special circumstances do not allow you to simply double click the jar and have it run.
+
+### Step 3) Make it runnable
+
+On some Distros and Desktop Environments you can simply right click on the PatcherGUI.jar file, then click properties > Permissions and ensure the check box: Is executable is marked.
+
+## OR
+
+You can open your terminal/console of choice and cd into the directory where the PatcherGUI.jar file is located, and run 'sudo chmod a+x PatcherGUI.jar'
+
+### Step 4) Open the GUI through command line
+
+Using your favorite terminal/console program, cd into the directory and run 'java -jar PatcherGUI.jar'
+
+# The Old Automated Setup Guide:
 ### This will create the wineprefix and modify the config file for you. If you want you can scroll down and find the manual instruction on what this patcher automates.
 
 ## Step 0:
@@ -48,7 +80,7 @@
 
  Congratulations Space Engineers should now work properly on Linux. Have fun and enjoy!
 
-# The Manual Setup Guide(Skip if you used the autopatcher):
+# The Manual Setup Guide(Skip if you used the autopatchers, and they seemed to work):
 
 
 ## Step 0:
