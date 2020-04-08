@@ -1,4 +1,4 @@
-//MINUMUM JAVA VERISON 1.8
+//MINUMUM JAVA VERISON 1.7
 
 //FFS I SHOULD JUST IMPORT EVERYTHING AND BE DONE WITH IT!!!!
 import java.awt.Color;
@@ -119,6 +119,7 @@ public class PatchGUI
     public static JButton buttonRun;
     public static JButton buttonBackupPrefix;
     public static JButton buttonDeletePrefix;
+    public static JTextField textfieldSELOC;
     public static File PrefixFolder;
     public static boolean PatchVideo = true;
     public static boolean CreatePrefix= true;
@@ -178,15 +179,26 @@ public class PatchGUI
                 textareaOutput.append("Showing Help!");
             }
         });
+        JMenuItem issuesoption = new JMenuItem("Show Know Issues");
+        issuesoption.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                ShowKnownIssuesPopus();
+                LOGWRITER("USER IS SHOWING KNOWN ISSUES:", false);// SEE IF THE USER BOTHERS TO SEEK INTERNAL ASSITANCE... I AM CRANKY BECASUE I AM TIRED... GET OVER IT
+                textareaOutput.append("Showing Known Issues!");
+            }
+        });
         
         Help.setMnemonic(KeyEvent.VK_H);
         Help.add(helpoption);
+        Help.add(issuesoption);
         topBar.add(Help);
         
         JLabel lableSELOC=new JLabel("SpaceEngineers Bin64 dir:");
         //lableSELOC.setForeground(Color.WHITE);
         
-        JTextField textfieldSELOC = new JTextField("",45);
+        textfieldSELOC = new JTextField("",45);
         textfieldSELOC.setDisabledTextColor(Color.DARK_GRAY);
         textfieldSELOC.setText(SELocation);
         textfieldSELOC.setEnabled(false);
@@ -224,7 +236,7 @@ public class PatchGUI
         
         checkboxRenameVideo= new JCheckBox();
         checkboxRenameVideo.setSelected(PatchVideo);
-        checkboxRenameVideo.setText("Apply video freeze when starting the game. (It renames the KSH.wmv file so the game ignores it.)");
+        checkboxRenameVideo.setText("Apply fix for video freeze when starting the game. (It renames the KSH.wmv file so the game ignores it.)");
         checkboxRenameVideo.addItemListener(new ItemListener(){    
             @Override
             public void itemStateChanged(ItemEvent EVENT) 
@@ -361,7 +373,55 @@ public class PatchGUI
      ///////////////////////////////////////////////////////////////////////////
 ///// EVERYTHING BELOW HERE SHOULD BE DONE AND TESTED... SHOULD BE... HOPEFULLY /////
      /////////////////////////////////////////////////////////////////////////// ... turns out it definitely is not :(
-    
+    public static void ShowKnownIssuesPopus()
+    {
+        JTextArea TextGoesHere = new JTextArea();
+        TextGoesHere.setLineWrap(true);
+        TextGoesHere.setEditable(false);//SHOULD STILL BE SELECTABLE THOUGH
+        
+        TextGoesHere.setText(
+"This contains information on known issues with running Space Engineers on Linux."+"\n"+
+"You can find more information on known issues here: \n"+
+"https://github.com/Linux74656/SpaceEngineersLinuxPatches/blob/master/README.md"+"\n"+"\n"+
+"Issue 1: Broken startup and missing videos, causing startup freeze that requires"+"\n"+
+"   user input to get past the splash screen."+"\n"+
+"Fix: This patcher will fix this issue. Enable apply fix for video freeze."+"\n"+
+"_____________________________________"+"\n"+
+"Issue 2: On start, a window will appear complaining about rundll32.exe"+"\n"+
+"Fix: This patcher will fix this issue. Enable tell wine to disable rundll32.exe"+"\n"+
+"_____________________________________"+"\n"+
+"Issue 3: Some users report that faudio has looping sound issues."+"\n"+
+"Fix: no known solution as of this time."+"\n"+
+"_____________________________________"+"\n"+
+"Issue 4: While using faudio some users report crackling or popping audio."+"\n"+
+"Fix: add PULSE_LATENCY_MSEC=60 to the launch options for SE in steam."+"\n"+
+"_____________________________________"+"\n"+
+"Issue 5: Mouse issues when using alt+tab."+"\n"+
+"Fix: No viable fix has been achieved, however you can see here for more info:"+"\n"+
+"https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/14"+"\n"+
+"_____________________________________"+"\n"+
+"Issue 6: Game crashes shortly after start with System.OutOfMemoryException: Array"+"\n"+
+"   dimensions exceeded supported range. error in log."+"\n"+
+"Fix: block the analytics server by running this in your terminal:"+"\n"+
+"sudo iptables -A INPUT -s 88.146.207.227 -j DROP"+"\n"+
+"_____________________________________"+"\n"+
+"Issue 7: The game will freeze and accept no input just after loading a world."+"\n"+
+"This will also sometimes lockup the OS. This seems to only happen on the newest line of"+"\n"+
+"   AMD graphics cards(tested(5700/5700XT))."+"\n"+
+"Fix: Set the in-game voxel quality to it's lowest setting."+"\n"+
+"_____________________________________"+"\n"+
+"Issue 8: SpaceEngineers.exe contiues to exist after exiting the game."+"\n"+
+"Fix: You can take a look at this script by inetknght:"+"\n"+
+"https://github.com/inetknght/linux-profile/blob/master/.bash/kill_space_engineers.bash"+"\n"
+        );
+        TextGoesHere.setCaretPosition(0);
+        TextGoesHere.setFont(WindowFont);
+        JScrollPane scrollpane = new JScrollPane(TextGoesHere);
+        scrollpane.setPreferredSize(new Dimension(750, 400));
+        
+        JOptionPane.showConfirmDialog(MainWindow, scrollpane, "Help Section:", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE);
+  
+    }
     //SHOW THE SUER HELP IF THEY WANT IT.
     public static void ShowHelpPopup()
     {
@@ -382,7 +442,7 @@ public class PatchGUI
 "\n" +
 "Next ensure you have installed all of the necessary dependencies for this program:\n" +
 "\n" +
-"Winetricks:\n" +
+"Winetricks:\n NOTE: Do not use the Ubuntu repo for this, it is out of date." +
 "See relevant documentation here: \n" +
 "https://wiki.winehq.org/Winetricks" +
 "\n" +
@@ -469,7 +529,7 @@ public class PatchGUI
                     CreateAlertPopup("You will need to run the game from steam and allow it to fail to install all of\n"
                             + "it's components. Then you may procceed with the prefix installation.");
                 } 
-                catch (IOException ex) {LOGWRITER("Prefix deletion failed!? "+ex, false);}
+                catch(IOException ex){LOGWRITER("Prefix deletion failed!? "+ex, false);}
             }
             ToggleUIEnabled(true);
         }
@@ -646,7 +706,7 @@ public class PatchGUI
         //IT SEEMS THIS FUNCTION IS REDUNDANT BUT I'LL LEAVE IT BECUASE I DON'T WANT TO GO BACK AND CHANGE EVERYTHING
     }
     
-    public static ActionListener ShowFileChooser(JFrame frame, JTextField textfield)
+    public static ActionListener ShowFileChooser(final JFrame frame, final JTextField textfield)
     {
        ActionListener popupfilechooser = new ActionListener() 
        {
@@ -780,8 +840,8 @@ public class PatchGUI
     // I HATE MULTITHREADING!!!!!!!!!!*
     // ALMOST AS MUCH AS I HATE JAVA!!!!!!!*
     // *Read this in even larger caps since all of my comments are in caps anyway
-    public static void runThreadedWinePrefixinstall(String PrefixVar,
-            boolean SPECAILEXEPTIONFORRUNDLL32/*READ AS SARCASTICALLY AS HUMANLY POSIBLE //ALSO SEPCIAL EXCEPTION FOR RUNDLL32 MAY BE REDUNDANT*/)
+    public static void runThreadedWinePrefixinstall(final String PrefixVar,
+            final boolean SPECAILEXEPTIONFORRUNDLL32/*READ AS SARCASTICALLY AS HUMANLY POSIBLE //ALSO SEPCIAL EXCEPTION FOR RUNDLL32 MAY BE REDUNDANT*/)
     {
         //SWING WORKER... I... I DON'T... BUT WHY? I KNOW SWING IS NOT THREAD SAFE BUT FFS!
         SwingWorker worker = new SwingWorker<Boolean, Integer>() 
