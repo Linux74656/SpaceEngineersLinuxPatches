@@ -19,6 +19,8 @@
 
 8. [SpaceEngineers.exe becomes zombie on exit](#issue-8)
 
+9. [SpaceEngineers does not work when installed on NFS](#issue-9)
+
 # New Automated Setup Guide:
 
 #### This can patch the original SE DOTNET issue and several others.
@@ -214,7 +216,6 @@ ___________________
   ### Known Fix:  
   Set the in-game voxel quality to it's lowest setting. This seems to have solved the issue.
 ___________________
- 
 
   ### Issue 8:  
   From this issue https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/26
@@ -226,6 +227,15 @@ ___________________
   https://github.com/inetknght/linux-profile/blob/master/.bash/kill_space_engineers.bash
   
   It will help eleminate those pesky zombie processes.
+___________________
+
+  ### Issue 9:  
+  From this issue https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/33
+  
+  It appears space engineers does not work when run from an NFS(Network File System.)
+
+  ### Known Fix:
+  Do not install or run SE from an NFS.
 ___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
