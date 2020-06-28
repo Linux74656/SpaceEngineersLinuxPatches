@@ -27,6 +27,8 @@
 
 ### Step 0) Prerequisites
 
+#### Note: Ensure you have proton setup and configured prorperly. You can find more information here: https://github.com/ValveSoftware/Proton/wiki and https://github.com/ValveSoftware/Proton/wiki/Requirements
+
 This java program simply requires Java 7 or later. This should be standard on most modern Linux systems. If it is not you can search the internet for a specific guide on how to install it for your particular Linux distribution.
 
 ### Step 1) Get it
