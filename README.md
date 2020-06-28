@@ -21,6 +21,8 @@
 
 9. [SpaceEngineers does not work when installed on NFS](#issue-9)
 
+## NOTE: Space Engineers and presumable many other proton games will fail with a 'too many files open' error as seen here: https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/35 while using OpenRC instead of systemd. The solution is to increase your file limits(the specific solution is in the original post of the issue linked previously).
+
 # New Automated Setup Guide:
 
 #### This can patch the original SE DOTNET issue and several others.
