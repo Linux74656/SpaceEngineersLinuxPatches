@@ -3,6 +3,8 @@
 
 #### Here is a list of Known Issues, and potential solutions:
 
+0. [Crash After splashscreen](#issue-0)
+
 1. [Freeze at starup](#issue-1)
 
 2. [rundl32.exe error popup](#issue-2)
@@ -116,7 +118,7 @@ ___________________
 
   Create your wine prefix with winetricks in the compatdata folder in steamapps/common/
 
-  `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet472 vcrun2015 faudio d3dcompiler_47`
+  `WINEPREFIX="INSERT/DIRECTORY/TO/SPACEENGINEERS/pfx" winetricks --force -q dotnet48 vcrun2015 faudio d3dcompiler_47`
 ___________________
 ### OR with protontricks
 
@@ -150,6 +152,13 @@ ___________________
 
   # Known issues:
 
+
+  ### Issue 0:  
+  When using the autopatcher (even sometimes when using the manual method) the game will show a splash screen and then crash.
+
+  ### Known Fix:
+  Manually install dotnet48 into your prefix. More information can be found in step 2 of manual guide above.
+___________________  
   ### Issue 1:  
   Broken startup and missing videos, causing startup freeze that requires user input to get past the splash screen.
 
