@@ -227,7 +227,7 @@ ___________________
   The game will freeze and accept no input just after loading a world. This will also sometimes lockup the OS. This seems to only happen on the newest line of AMD graphics cards(currently tested(5700/5700XT)).
 
   ### Known Fix:  
-  Set the in-game voxel quality to it's lowest setting. This seems to have solved the issue.
+  Set all ingame graphics settings to minimum. Especially Voxel Quaity, and grass density. You may wish to increase some settings, such as texure quality, but do so at your own peril, the results may be mixed.
 ___________________
 
   ### Issue 8:  
