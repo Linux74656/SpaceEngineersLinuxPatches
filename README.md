@@ -23,6 +23,8 @@
 
 9. [SpaceEngineers does not work when installed on NFS](#issue-9)
 
+10. [Crash at or before main menu](#issue-10)
+
 ## NOTE: Space Engineers and presumable many other proton games will fail with a 'too many files open' error as seen here: https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/35 while using OpenRC instead of systemd. The solution is to increase your file limits(the specific solution is in the original post of the issue linked previously).
 
 # New Automated Setup Guide:
@@ -249,6 +251,15 @@ ___________________
 
   ### Known Fix:
   Do not install or run SE from an NFS.
+___________________  
+
+  ### Issue 10:  
+  From this issue https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/46
+  
+  Running Space Engineers will sometimes crash at or before the main menu. This sometimes is caused by mono being used instead of DotNet, however if dotnet is used then and this issue persist, try the following fix.
+
+  ### Known Fix:
+  In winecfg, enable 'Emulate a virtual desktop' and set your desired resolution.
 ___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
