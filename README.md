@@ -166,6 +166,10 @@ ___________________
 
   ### Known Fix:
   Rename the file here: "LOCATION_OF_SPACE_ENGINEERS_INSTALL/SpaceEngineers/Content/Videos/KSH.wmv to KSH.wmv.old
+  
+  OR
+  
+  Set Steam launch options (right click Space Engineers in Steam, click Properties, then in the General tab) to `%command% -skipintro`
 ___________________  
 
   ### Issue 2:  
