@@ -25,6 +25,8 @@
 
 10. [Crash at or before main menu](#issue-10)
 
+11. [Dotnet4.0 failed in proton 6.3-2](#issue-11)
+
 ## NOTE: Space Engineers and presumable many other proton games will fail with a 'too many files open' error as seen here: https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/35 while using OpenRC instead of systemd. The solution is to increase your file limits(the specific solution is in the original post of the issue linked previously).
 
 # New Automated Setup Guide:
@@ -264,6 +266,15 @@ ___________________
 
   ### Known Fix:
   In winecfg, enable 'Emulate a virtual desktop' and set your desired resolution.
+  ___________________  
+
+  ### Issue 11:  
+  From this issue https://github.com/Linux74656/SpaceEngineersLinuxPatches/issues/52
+  Dotnet4.0, a requirement for dotnet4.7.2 and dotnet4.8 fails to install on some systems in newer proton versions.
+  
+
+  ### Known Fix:
+  Downgrade to an older version of proton such as 4.11-13 and install dotnet, before swithing to a newer version of proton.
 ___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
