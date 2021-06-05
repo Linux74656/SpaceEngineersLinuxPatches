@@ -274,7 +274,7 @@ ___________________
   
 
   ### Known Fix:
-  Downgrade to an older version of proton such as 4.11-13 and install dotnet, before swithing to a newer version of proton.
+  Downgrade to an older version of proton such as 4.11-13, or possibly 5.0 and install dotnet, before swithing to a newer version of proton.
 ___________________  
 
   ## Special thanks to InflexCZE for taking the time to help. Without his help it could have taken many more months to figure this out.
